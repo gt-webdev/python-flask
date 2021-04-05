@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href={{ url_for('static', filename='styles.css') }} rel="stylesheet">
+        <title>Chat Bot</title>
+    </head>
+    <body>
+        <h1>Unhelpful Chat Bot</h1>
+        {% for log in chat_log %}
+            {% if loop.index0 is divisibleby(2) %}
+                <p class="botchat">{{ log }}</p>
+            {% else %}
+                <p>{{ log }}</p>
+            {% endif %}
+        {% endfor %}
+        <form method="post" autocomplete="off">
+            <input type="text" id="chatInp" name="chatInp">
+            <button type="submit">Send Message</button>
+        </form>
+    </body>
+</html>

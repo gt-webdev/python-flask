@@ -1,0 +1,18 @@
+body {
+	font-family: "American Typewriter";
+    text-align: right;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+h1 {
+    text-align: center;
+}
+
+input {
+    width: 200px;
+}
+
+.botchat {
+    text-align: left;
+}
