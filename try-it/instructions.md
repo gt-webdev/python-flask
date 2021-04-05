@@ -1,10 +1,12 @@
 # Step 1: Include necessary imports
+In app.py:
 ```
 from flask import Flask, render_template, request
 import json
 ```
 
 # Step 2: Create a Flask app
+In app.py:
 ```
 app = Flask(__name__)
 app.static_folder = 'static'
@@ -12,6 +14,7 @@ chat_log = ["Hello, I am a chat bot (as you can tell). I merely repeat what you 
 ```
 
 # Step 3: Create a route for the main page
+In app.py:
 ```
 @app.route('/')
 def index():
@@ -26,12 +29,13 @@ In index.html:
 {% endfor %}
 ```
 
-In app.py:
+Updating a line in app.py:
 ```
 render_template('index.html', chat_log=chat_log)
 ```
 
 # Step 5: Create POST request within website
+Updating a code block in app.py:
 ```
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -45,6 +49,7 @@ def index():
 ```
 
 # Step 6: Make computer's chat on left side and user's chat on right side
+Updating a code block in index.html:
 ```
 {% for log in chat_log %}
     {% if loop.index0 is divisibleby(2) %}
@@ -56,6 +61,7 @@ def index():
 ```
 
 # Step 7: API GET request for all chat logs
+In app.py:
 ```
 @app.route('/api/chat/', methods=['GET'])
 def get_log():
@@ -68,6 +74,7 @@ def get_log():
 ```
 
 # Step 8: API GET request for a single chat log
+In app.py:
 ```
 @app.route('/api/chatelem/<int:id>')
 def get_chat(id):
@@ -86,6 +93,7 @@ def get_chat(id):
 ```
 
 # Step 9: API POST request
+In app.py:
 ```
 @app.route('/api/newpost/<string:new_message>', methods=['POST'])
 def add_chat(new_message):
